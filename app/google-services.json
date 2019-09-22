@@ -1,10 +1,48 @@
 {
   "project_info": {
-    "project_number": "267017267886",
-    "firebase_url": "https://askndrtaskmanger-21a2c.firebaseio.com",
-    "project_id": "askndrtaskmanger-21a2c",
-    "storage_bucket": "askndrtaskmanger-21a2c.appspot.com"
+    "project_number": "74435229324",
+    "firebase_url": "https://askndrtaskmanger.firebaseio.com",
+    "project_id": "askndrtaskmanger",
+    "storage_bucket": "askndrtaskmanger.appspot.com"
   },
-  "client": [],
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74435229324:android:5ac558a81a86ce564a2da9",
+        "android_client_info": {
+          "package_name": "com.example.askndrtaskmanger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74435229324-fgt1e7tn066tp64qkk10q76mmvsn4fuu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.askndrtaskmanger",
+            "certificate_hash": "8d4e87598d212bdb282d05faa7766dc9c486dbdf"
+          }
+        },
+        {
+          "client_id": "74435229324-qn11l8uesajemlhnpofi9oqvkns00h2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwyV_a1tU06CoVIlZ8aCiJaeKVmgRuiSE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74435229324-qn11l8uesajemlhnpofi9oqvkns00h2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
   "configuration_version": "1"
 }

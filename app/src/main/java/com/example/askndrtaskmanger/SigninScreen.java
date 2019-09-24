@@ -86,13 +86,17 @@ public class SigninScreen extends AppCompatActivity {
 
 
                      Intent i =new Intent(getApplication(),TempAllTasksACtivity.class);
+                     startActivity(i);
 
                 }
                 else
                     {
                         etemail.setError("email or password is wrong");
 
+
+
                 }
+
 
             }
         });

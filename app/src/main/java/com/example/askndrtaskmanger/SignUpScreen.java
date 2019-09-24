@@ -23,5 +23,8 @@ public class SignUpScreen extends AppCompatActivity {
         etrewrite=findViewById(R.id.etrewrite);
         btnSave=findViewById(R.id.btnSave);
 
+
+
+
     }
 }

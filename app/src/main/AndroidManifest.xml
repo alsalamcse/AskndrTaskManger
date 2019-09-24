@@ -15,8 +15,8 @@
         <activity android:name=".AllTasksScreen" />
         <activity android:name=".SignUpScreen" />
         <activity android:name=".SigninScreen" />
-        <activity android:name=".WelcomeScreen" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

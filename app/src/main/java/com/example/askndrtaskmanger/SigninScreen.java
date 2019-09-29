@@ -30,6 +30,15 @@ public class SigninScreen extends AppCompatActivity {
         btnSignup = findViewById(R.id.btnSignup);
 
 
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplication(),SignUpScreen.class);
+                startActivity(intent);
+            }
+        });
+
+
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -3,6 +3,7 @@ package com.example.askndrtaskmanger;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -24,7 +25,47 @@ public class SignUpScreen extends AppCompatActivity {
         btnSave=findViewById(R.id.btnSave);
 
 
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dataHandler();
+            }
+        });
 
 
     }
+
+    private void dataHandler()
+    {
+        boolean isok=true;
+        String FirstName=etFirst.getText().toString();
+        String LastName=etLast.getText().toString();
+        String phone=etPhone.getText().toString();
+        String Email=etEmail.getText().toString();
+        String password=etPass.getText().toString();
+        String rewrite=etrewrite.getText().toString();
+        if (Email.length()<4||Email.indexOf('@')<0||Email.indexOf('.')<0)
+        {
+            etEmail.setError("Wrong Email");
+            isok=false;
+
+        }
+        if (password.length()<8||password.equals(rewrite)==false)
+        {
+            etrewrite.setError("Have to be at least 8 char and the same Password ");
+            etPass.setError("Have to be at least 8 char and the same Password");
+            isok=false;
+        }
+        if (FirstName.length()==0)
+        {
+            etFirst.setError("enter name");
+            isok=false;
+
+        }
+        if (isok)
+        {
+
+        }
+    }
 }
+

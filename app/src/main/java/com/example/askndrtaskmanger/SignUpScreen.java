@@ -1,11 +1,18 @@
 package com.example.askndrtaskmanger;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpScreen extends AppCompatActivity {
     private EditText etFirst,etLast,etPhone,etEmail,etPass,etrewrite;
@@ -65,7 +72,26 @@ public class SignUpScreen extends AppCompatActivity {
         if (isok)
         {
 
+            createAcount(Email,password,FirstName,LastName,phone);
         }
+    }
+
+    private void createAcount(String Email, String password, String firstName, String lastName, String phone)
+    {
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        auth.createUserWithEmailAndPassword(Email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    finish();
+                }
+                else
+                {
+                    etEmail.setError("SignUp fialed");
+                }
+
+            }
+        });
     }
 }
 

@@ -3,6 +3,7 @@ package com.example.askndrtaskmanger;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -23,5 +24,39 @@ public class AddTaskScreen extends AppCompatActivity {
         sbpriority=findViewById(R.id.sbpriority);
         btnSave=findViewById(R.id.btnSave);
 
+
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dataHandler();
+            }
+        });
     }
+
+    private void dataHandler(){
+        boolean isok=true;
+        String Title=etTitle.getText().toString();
+        String Subject=etSubject.getText().toString();
+       int priority= sbpriority.getProgress();
+
+       if (Title.length()==0){
+           etTitle.setError("Enter Title");
+           isok=false;
+
+       }
+       if (Subject.length()==0){
+           etSubject.setError("Enter Subject");
+           isok=false;
+       }
+       if (isok){
+
+
+       }
+
+
+    }
+
+
+
 }

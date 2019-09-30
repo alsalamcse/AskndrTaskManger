@@ -49,7 +49,9 @@ public class AddTaskScreen extends AppCompatActivity {
            etSubject.setError("Enter Subject");
            isok=false;
        }
-       if (isok){
+       if (isok)
+       {
+
            createTask(Title,Subject,priority);
 
 
@@ -57,7 +59,8 @@ public class AddTaskScreen extends AppCompatActivity {
 
 
     }
-    private void createTask(String Title,String Subject,int priority){
+    private void createTask(String Title,String Subject,int priority)
+    {
 
     }
 

@@ -50,10 +50,14 @@ public class AddTaskScreen extends AppCompatActivity {
            isok=false;
        }
        if (isok){
+           createTask(Title,Subject,priority);
 
 
        }
 
+
+    }
+    private void createTask(String Title,String Subject,int priority){
 
     }
 

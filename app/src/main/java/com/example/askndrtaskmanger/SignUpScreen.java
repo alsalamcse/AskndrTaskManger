@@ -8,6 +8,7 @@ import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -83,6 +84,7 @@ public class SignUpScreen extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    Toast.makeText(SignUpScreen.this, "SignUp Successful ", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 else

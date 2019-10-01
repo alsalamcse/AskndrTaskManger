@@ -22,7 +22,6 @@ public class AddTaskScreen extends AppCompatActivity {
         etTitle=findViewById(R.id.etTitle);
         etSubject=findViewById(R.id.etSubject);
         sbpriority=findViewById(R.id.sbpriority);
-
         btnSave=findViewById(R.id.btnSave);
 
 

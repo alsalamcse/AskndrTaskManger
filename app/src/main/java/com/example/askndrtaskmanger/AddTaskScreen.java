@@ -9,6 +9,11 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import Data.MyTask;
+
 public class AddTaskScreen extends AppCompatActivity {
     private EditText etTitle,etSubject;
     private SeekBar sbpriority;
@@ -51,18 +56,33 @@ public class AddTaskScreen extends AppCompatActivity {
        }
        if (isok)
        {
+           MyTask task=new MyTask();
+           task.setTitle(Title);
+           createMyTask(task);
 
-           createTask(Title,Subject,priority);
+
+
 
 
        }
 
 
     }
-    private void createTask(String Title,String Subject,int priority)
+
+    private void createMyTask(MyTask task)
     {
+        //.1
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        //.2-save in database
+        DatabaseReference reference = firebaseDatabase.getReference();//make a barameter ( with var)
+        String key = reference.child("Tasks").push().getKey();
+        reference.child("Tasks").child(key).setValue(task);
+
 
     }
+
+
+
 
 
 

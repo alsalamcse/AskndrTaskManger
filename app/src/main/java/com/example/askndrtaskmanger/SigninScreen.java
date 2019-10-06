@@ -94,7 +94,7 @@ public class SigninScreen extends AppCompatActivity {
                     //todo go to, main screen(all task activity)
 
 
-                     Intent i =new Intent(getApplication(),TempAllTasksACtivity.class);
+                     Intent i =new Intent(SigninScreen.this,MainTasksActivity.class);
                      startActivity(i);
 
                 }

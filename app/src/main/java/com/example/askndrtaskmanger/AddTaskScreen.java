@@ -1,5 +1,6 @@
 package com.example.askndrtaskmanger;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,7 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -76,7 +80,20 @@ public class AddTaskScreen extends AppCompatActivity {
         //.2-save in database
         DatabaseReference reference = firebaseDatabase.getReference();//make a barameter ( with var)
         String key = reference.child("Tasks").push().getKey();
-        reference.child("Tasks").child(key).setValue(task);
+        reference.child("Tasks").child(key).setValue(task).addOnCompleteListener(AddTaskScreen.this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful())
+                {
+                    Toast.makeText(AddTaskScreen.this, "Add Successful", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else {
+                    Toast.makeText(AddTaskScreen.this, "Add Failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    task.getException().printStackTrace();
+                }
+            }
+        });
 
 
     }

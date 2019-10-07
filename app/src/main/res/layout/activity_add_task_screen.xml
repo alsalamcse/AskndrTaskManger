@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/etTitle"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="47dp"
         android:layout_marginLeft="47dp"
         android:layout_marginTop="39dp"
@@ -27,7 +27,7 @@
     <EditText
         android:id="@+id/etSubject"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginEnd="49dp"
@@ -44,7 +44,7 @@
     <SeekBar
         android:id="@+id/sbpriority"
         android:layout_width="0dp"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
         android:layout_marginEnd="46dp"
         android:layout_marginRight="46dp"
@@ -57,7 +57,7 @@
     <TextView
         android:id="@+id/tvpriority"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="51dp"
         android:layout_marginLeft="51dp"
         android:layout_marginEnd="40dp"
@@ -72,7 +72,7 @@
     <Button
         android:id="@+id/btnSave"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginLeft="68dp"
         android:layout_marginEnd="68dp"

@@ -2,10 +2,21 @@ package Data;
 
 public class MyTask
 {
-    String Key;
-    String title;
-    String Subject;
-    int priority;
+   private String Key;
+   private String title;
+   private String Subject;
+   private int priority;
+    private String owner;
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+
 
     public MyTask() {
     }

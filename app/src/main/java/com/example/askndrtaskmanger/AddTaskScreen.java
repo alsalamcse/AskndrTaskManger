@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -43,29 +44,31 @@ public class AddTaskScreen extends AppCompatActivity {
         });
     }
 
-    private void dataHandler(){
+    private void dataHandler()
+    {
         boolean isok=true;
         String Title=etTitle.getText().toString();
         String Subject=etSubject.getText().toString();
        int priority= sbpriority.getProgress();
 
-       if (Title.length()==0){
+       if (Title.length()==0)
+       {
            etTitle.setError("Enter Title");
            isok=false;
 
        }
-       if (Subject.length()==0){
+
+       if (Subject.length()==0)
+       {
            etSubject.setError("Enter Subject");
            isok=false;
        }
+
        if (isok)
        {
            MyTask task=new MyTask();
            task.setTitle(Title);
            createMyTask(task);
-
-
-
 
 
        }
@@ -79,8 +82,12 @@ public class AddTaskScreen extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         //.2-save in database
         DatabaseReference reference = firebaseDatabase.getReference();//make a barameter ( with var)
+        FirebaseAuth auth =FirebaseAuth.getInstance();//to get the user uid or details like email
+        String uid = auth.getCurrentUser().getUid();
+        task.setOwner(uid);
+
         String key = reference.child("Tasks").push().getKey();
-        reference.child("Tasks").child(key).setValue(task).addOnCompleteListener(AddTaskScreen.this, new OnCompleteListener<Void>() {
+        reference.child("Tasks").child(uid).child(key).setValue(task).addOnCompleteListener(AddTaskScreen.this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
@@ -97,10 +104,4 @@ public class AddTaskScreen extends AppCompatActivity {
 
 
     }
-
-
-
-
-
-
 }

@@ -18,6 +18,7 @@ import com.example.askndrtaskmanger.ui.main.SectionsPagerAdapter;
 
 public class MainTasksActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

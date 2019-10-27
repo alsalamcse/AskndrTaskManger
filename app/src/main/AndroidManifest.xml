@@ -13,13 +13,11 @@
             android:name=".MainTasksActivity"
             android:label="@string/title_activity_main_tasks"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".TempAllTasksACtivity" />
         <activity android:name=".SettingsScreen" />
         <activity android:name=".AddTaskScreen" />
         <activity android:name=".AllTasksScreen" />
         <activity android:name=".SignUpScreen" />
         <activity android:name=".SigninScreen" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

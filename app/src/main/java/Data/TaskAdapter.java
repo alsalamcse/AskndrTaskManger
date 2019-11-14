@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.askndrtaskmanger.R;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.zip.Inflater;
 
@@ -45,12 +47,28 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
         CheckBox cbIsCompleted=vitem.findViewById(R.id.itmChbxIsCompleted);
         ImageView ivInfo=vitem.findViewById(R.id.itmImgInfo);
 
-        MyTask myTask = getItem(position);//getting data source
+        final MyTask myTask = getItem(position);//getting data source
 
         //todo טיפול : באירוע מחיקה
         cbIsCompleted.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+
+                    //todo delete this item
+                    FirebaseUtils.getRefrence().child(myTask.getKey()).removeValue(new DatabaseReference.CompletionListener() {
+                        @Override
+                        public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
+                            if(databaseError==null)
+                            {
+
+                            }
+                        }
+                    });
+
+
+                }
+
 
             }
         });

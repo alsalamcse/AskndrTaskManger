@@ -70,7 +70,6 @@ public class AddTaskScreen extends AppCompatActivity {
            task.setTitle(Title);
            task.setSubject(Subject);
            task.setPriority(priority);
-
            createMyTask(task);
 
 

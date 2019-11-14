@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -45,6 +46,15 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
         ImageView ivInfo=vitem.findViewById(R.id.itmImgInfo);
 
         MyTask myTask = getItem(position);//getting data source
+
+        //todo טיפול : באירוע מחיקה
+        cbIsCompleted.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+            }
+        });
+
 
         //connect item view to data source
         tvTitle.setText(myTask.getTitle());

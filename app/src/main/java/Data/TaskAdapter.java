@@ -67,6 +67,7 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
                             }
                             else {
                                 Toast.makeText(getContext(), "not deleted"+databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+
                             }
                         }
                     });

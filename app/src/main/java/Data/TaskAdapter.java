@@ -42,11 +42,11 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
 
         //building item view
         View vitem= LayoutInflater.from(getContext()).inflate(R.layout.taskitem,parent,false);
-        TextView tvTitle=vitem.findViewById(R.id.itmTvTitle);
+        final TextView tvTitle=vitem.findViewById(R.id.itmTvTitle);
         TextView tvSubject=vitem.findViewById(R.id.itmTvSubject);
         RatingBar rbPrio=vitem.findViewById(R.id.itmRatingPrio);
         CheckBox cbIsCompleted=vitem.findViewById(R.id.itmChbxIsCompleted);
-        ImageView ivInfo=vitem.findViewById(R.id.itmImgInfo);
+        final ImageView ivInfo=vitem.findViewById(R.id.itmImgInfo);
 
         final MyTask myTask = getItem(position);//getting data source
 
@@ -75,9 +75,17 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
 
                 }
 
-
             }
         });
+        ivInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Toast.makeText(getContext(), myTask.getTitle(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
         //connect item view to data source

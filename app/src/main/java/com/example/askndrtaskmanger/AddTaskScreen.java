@@ -89,6 +89,7 @@ public class AddTaskScreen extends AppCompatActivity {
         task.setOwner(uid);
 
         String key = reference.child("Tasks").push().getKey();
+        task.setKey(key);
         reference.child("Tasks").child(uid).child(key).setValue(task).addOnCompleteListener(AddTaskScreen.this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

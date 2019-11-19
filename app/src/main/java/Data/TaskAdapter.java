@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -102,22 +103,37 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
         return vitem;
     }
     public void ShowMenu(){
+
         final String[]option={"Add","View","Select","Delete"};
-        ArrayAdapter<String>adapter=new ArrayAdapter<String>(this,android.R.layout.select_dialog_item,option);
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        ArrayAdapter<String>adapter=new ArrayAdapter<String>(getContext(),android.R.layout.select_dialog_item);
+        adapter.addAll(option);
+        AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
         builder.setTitle("Select option");
         builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(DialogInterface dialog, int i) {
+
+              if(i==0)
+              {
+                  Toast.makeText(getContext(), "Add", Toast.LENGTH_SHORT).show();
+              }
+              if (i==1)
+              {
+                  Toast.makeText(getContext(), "View", Toast.LENGTH_SHORT).show();
+              }
+              if(i==2)
+              {
+                  Toast.makeText(getContext(), "Select", Toast.LENGTH_SHORT).show();
+              }
+              if (i==3){
+                  Toast.makeText(getContext(), "Delete", Toast.LENGTH_SHORT).show();
+              }
+
 
             }
         });
         final AlertDialog a=builder.create();
-
-
-
-
-
+        a.show();
 
 
     }

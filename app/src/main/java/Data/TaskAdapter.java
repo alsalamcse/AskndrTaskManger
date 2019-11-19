@@ -1,6 +1,9 @@
 package Data;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,6 +86,8 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
 
 
                 Toast.makeText(getContext(), myTask.getTitle(), Toast.LENGTH_SHORT).show();
+                ShowMenu();
+
             }
         });
 
@@ -97,6 +102,23 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
         return vitem;
     }
     public void ShowMenu(){
+        final String[]option={"Add","View","Select","Delete"};
+        ArrayAdapter<String>adapter=new ArrayAdapter<String>(this,android.R.layout.select_dialog_item,option);
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setTitle("Select option");
+        builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        final AlertDialog a=builder.create();
+
+
+
+
+
+
 
     }
 

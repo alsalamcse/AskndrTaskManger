@@ -102,6 +102,7 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
 
         return vitem;
     }
+
     public void ShowMenu(){
 
         final String[]option={"Add","View","Select","Delete"};

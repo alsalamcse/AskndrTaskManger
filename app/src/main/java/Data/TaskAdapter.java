@@ -42,7 +42,8 @@ public class TaskAdapter extends ArrayAdapter<MyTask>
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
+    {
 
         //building item view
         View vitem= LayoutInflater.from(getContext()).inflate(R.layout.taskitem,parent,false);
